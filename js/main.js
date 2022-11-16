@@ -18,7 +18,7 @@ let weatherIcon = dq('[data-weatherIcon]')
 let gif = dq('[data-gif]')
 
 
-  loadSite('somerset')
+  loadSite('ibadan')
 
 
 async function loadSite(cityName){
