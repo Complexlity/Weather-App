@@ -5,7 +5,37 @@
 /* .content {
     grid-template-rows:repeat(2, 250px);
 } */
+:root{
+    --bg-image: #111827;
+}
 
+.content * {
+    color:black;
+}
 .search:has(input:focus){
     border-color:rgb(156 163 175 /1)
 }
+
+.mini-content {
+    background: var(--bg-image);
+    background-size:cover;
+    background-repeat:no-repeat;
+
+}
+
+.content{
+    filter: brightness(80%);
+}
+
+@media (min-width:700px) {
+    .mini-content{
+        background: none;
+    }
+
+    .content {
+        background: var(--bg-image);
+        background-size:cover;
+    background-repeat:no-repeat;
+    }
+}
+
