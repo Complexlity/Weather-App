@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.content {
+/* .content {
     grid-template-rows:repeat(2, 250px);
+} */
+
+.search:has(input:focus){
+    border-color:rgb(156 163 175 /1)
 }
