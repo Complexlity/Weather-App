@@ -1,5 +1,9 @@
 import {getRequest, getGif} from './functions.js'
 
+let dq = document.querySelector.bind(document)
+let dqa = document.querySelectorAll.bind(document)
+let c = console.log.bind(document)
+
 loadSite()
 
 async function loadSite(){
