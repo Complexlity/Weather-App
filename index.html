@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Application</title>
     <link rel="stylesheet" href="css/styles.css">
-    <!-- <script src="js/main.js" type="module" defer></script> -->
+    <script src="js/main.js" type="module" defer></script>
 </head>
 <body class="overflow-auto bg-sky-600">
     <div class="bg-gray-50 border-x-2 border-gray-500 py-5 px-4 min-h-screen max-w-[900px] mx-auto ">
@@ -19,7 +19,7 @@
             <button data-search class="ml-2 bg-blue-400 px-4 rounded-xl h-full py-4 hover:bg-blue-500">Search</button></div>
         <div class=" min-h-screen mt-4">
             <div class="content | md:bg-gray-900 md:rounded-xl text-white md:h-[20rem] grid md:grid-cols-2 items-center gap-3 md:grid-rows-1">
-                <div class="bg-gray-900 md:bg-none pb-4 px-4 md:pb-0 md:px-0 rounded-xl">
+                <div class="mini-content bg-gray-900 md:bg-none pb-4 px-4 md:pb-0 md:px-0 rounded-xl">
                     <header class="flex justify-between mt-4 md:mt-0 md:text-2xl sm:text-xl ">
                         <div class="flex gap-0 ">
                             <img  class='w-6 md:w-8 flex gap-1 text-white'src="./assets/location.png" alt="">
@@ -28,11 +28,11 @@
                         <p data-time>Today 00:32 PM</p>
                     </header>
                     <p data-temperature class="text-center text-7xl mt-[3rem]" >21<sup class="">o</sup>C</p>
-                    <p data-weather class="text-center mt-4 text-2xl md:mt-6" >Rain</p>
+                    <p class=" flex justify-center text-center mt-4 text-2xl md:mt-6" ><img data-weatherIcon src="" alt="" class="weather-icon w-6"><span data-weather>Rain</span></p>
                     <div class="flex justify-between mt-4 md:mt-8">
-                        <div class="flex gap-1"><img class='w-6' src="./assets/wind-pressure.png" alt=""><span>840hpa</span></div>
-                        <div class="flex gap-1"><img class='w-6' src="./assets/humidity.png" alt=""><span>52%</span></div>
-                        <div class="flex gap-1"><img class='w-6' src="./assets/wind-speed.png" alt=""><span>14km/h</span></div>
+                        <div class="flex gap-1"><img class='w-6' src="./assets/wind-pressure.png" alt=""><span data-windPressure>840hpa</span></div>
+                        <div class="flex gap-1"><img class='w-6' src="./assets/humidity.png" alt=""><span data-humidity>52%</span></div>
+                        <div class="flex gap-1"><img class='w-6' src="./assets/wind-speed.png" alt=""><span data-windSpeed>14km/h</span></div>
                     </div>
                     <div>
                     </div>
