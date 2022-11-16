@@ -10,8 +10,9 @@ return [data, currentWeather]
 async function getGif(searchInput){
   const request =  `https://api.giphy.com/v1/gifs/translate?api_key=9Irfv12EE5h8tj4TGFf7pIJgSYg8u9l4&s=${searchInput}`
   const response = await fetch(request)
-    const data = await response.json()
-    const imageUrl = data.data.images.original_still.url
+    const recievedData = await response.json()
+    const imageUrl = recievedData.data.images.original.url
+    console.log(imageUrl)
     return imageUrl
 }
 

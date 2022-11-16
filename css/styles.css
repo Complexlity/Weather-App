@@ -542,6 +542,10 @@ video {
   display: none;
 }
 
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
 .h-full {
   height: 100%;
 }
@@ -556,6 +560,14 @@ video {
 
 .h-\[20rem\] {
   height: 20rem;
+}
+
+.h-\[50rem\] {
+  height: 50rem;
+}
+
+.h-\[30rem\] {
+  height: 30rem;
 }
 
 .min-h-screen {
@@ -576,6 +588,18 @@ video {
 
 .max-w-\[900px\] {
   max-width: 900px;
+}
+
+.max-w-\[10rem\] {
+  max-width: 10rem;
+}
+
+.max-w-\[15rem\] {
+  max-width: 15rem;
+}
+
+.max-w-\[20rem\] {
+  max-width: 20rem;
 }
 
 .grid-cols-2 {
@@ -626,29 +650,9 @@ video {
   border-width: 2px;
 }
 
-.border-x-2 {
-  border-left-width: 2px;
-  border-right-width: 2px;
-}
-
-.border-gray-500 {
-  --tw-border-opacity: 1;
-  border-color: rgb(107 114 128 / var(--tw-border-opacity));
-}
-
 .border-gray-300 {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
-}
-
-.border-gray-200 {
-  --tw-border-opacity: 1;
-  border-color: rgb(229 231 235 / var(--tw-border-opacity));
-}
-
-.border-gray-100 {
-  --tw-border-opacity: 1;
-  border-color: rgb(243 244 246 / var(--tw-border-opacity));
 }
 
 .border-black {
@@ -656,19 +660,14 @@ video {
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
-.bg-sky-600 {
+.bg-gray-100 {
   --tw-bg-opacity: 1;
-  background-color: rgb(2 132 199 / var(--tw-bg-opacity));
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
 .bg-gray-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
-}
-
-.bg-gray-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
 .bg-blue-400 {
@@ -684,6 +683,16 @@ video {
 .bg-gray-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+}
+
+.bg-orange-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 215 170 / var(--tw-bg-opacity));
+}
+
+.bg-orange-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 115 22 / var(--tw-bg-opacity));
 }
 
 .py-5 {
@@ -832,8 +841,16 @@ video {
     height: 22rem;
   }
 
+  .md\:h-\[15rem\] {
+    height: 15rem;
+  }
+
   .md\:w-8 {
     width: 2rem;
+  }
+
+  .md\:max-w-\[20rem\] {
+    max-width: 20rem;
   }
 
   .md\:grid-cols-2 {

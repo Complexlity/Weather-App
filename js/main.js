@@ -6,7 +6,8 @@ let c = console.log.bind(document)
 
 let root = dq(':root')
 
-let search = dqa('[data-search]')
+let searchForm = dqa('[data-search]')
+let searchButton = dq('[data-searchBtn')
 let cityName = dq('[data-cityName]')
 let time = dq('[data-time]')
 let temperature = dq('[data-temperature]')
@@ -15,10 +16,11 @@ let windPressure = dq('[data-windPressure]')
 let windSpeed = dq('[data-windSpeed]')
 let humidity = dq('[data-humidity]')
 let weatherIcon = dq('[data-weatherIcon]')
+let country = dq('[data-country]')
 let gif = dq('[data-gif]')
 
 
-  loadSite('ibadan')
+  loadSite('Cape Town')
 
 
 async function loadSite(cityName){
@@ -53,6 +55,7 @@ function updatePage(data){
     humidity.innerHTML = data.main.humidity + '%'
     windSpeed.innerHTML = data.wind.speed + 'm/s'
     gif.src = backgroundGif
+    country.innerHTML = data.sys.country
     //   document.getElementById("location").innerHTML = data.name;
     //   document.getElementById("description").innerHTML = data.weather[0].description;
     //   document.getElementById("data_temperature").innerHTML = Math.round((data.main.temp-273.15)*10)/10 + "°C";
