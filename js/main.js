@@ -89,7 +89,7 @@ async function loadSite(cityName){
     weather.innerHTML = weatherData[1]
     windPressure.innerHTML = data.main.pressure + 'hpa'
     humidity.innerHTML = data.main.humidity + '%'
-    windSpeed.innerHTML = data.wind.speed + 'm/s'
+    windSpeed.innerHTML = data.wind.speed + 'mph'
     gif.src = backgroundGif
     loader.classList.remove('transition-none')
     loader.style.opacity = '0'
