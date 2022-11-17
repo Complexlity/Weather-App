@@ -20,6 +20,8 @@ let humidity = dq('[data-humidity]')
 let weatherIcon = dq('[data-weatherIcon]')
 let country = dq('[data-country]')
 let gif = dq('[data-gif]')
+let loader = dq('[data-loader]')
+
 
 window.onload = function(){
   loadSite('London')
@@ -32,10 +34,6 @@ searchForm.addEventListener('submit', (e) =>{
 
 searchButton.addEventListener('click', submitQuery)
 
-
-  loadSite('Cape Tofdswn')
-
-
 function submitQuery(){
     let query = searchInput.value
     if(!query) return
@@ -47,6 +45,7 @@ function submitQuery(){
 
 
 async function loadSite(cityName){
+    loader.style.opacity = '1'
     let weatherData = await getRequest(cityName)
     if (weatherData === 400) {
       alert('City Not Found')
@@ -66,7 +65,6 @@ function updatePage(data){
     let iconCode = data.weather[0].icon
     let today = new Date()
     let backgroundImage;
-    let textColor;
     let weatherArray = ['rain', 'clouds', 'clear', 'mist']
     let weatherName = weatherData[1].toLowerCase()
     backgroundImage = `url('../assets/${weatherName}.jpg')`
@@ -74,7 +72,7 @@ function updatePage(data){
     root.style.setProperty('--bg-image', backgroundImage)
    
     cityName.innerHTML = data.name;
-    time.innerHTML = `Today ${today.getHours()}:${today.getMinutes()}`
+    time.innerHTML = `Today ${today.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}`
     temperature.innerHTML = Math.round((data.main.temp-273.15)*10)/10 + "°";
     weatherIcon.src = "http://openweathermap.org/img/w/" + iconCode + ".png"
     weatherIcon.style.display = 'inline-block'
@@ -83,6 +81,9 @@ function updatePage(data){
     humidity.innerHTML = data.main.humidity + '%'
     windSpeed.innerHTML = data.wind.speed + 'm/s'
     gif.src = backgroundGif
+    setTimeout(() => {
+      loader.style.opacity = '0'
+    }, 1000)
     //   document.getElementById("location").innerHTML = data.name;
     //   document.getElementById("description").innerHTML = data.weather[0].description;
     //   document.getElementById("data_temperature").innerHTML = Math.round((data.main.temp-273.15)*10)/10 + "°C";
@@ -92,6 +93,5 @@ function updatePage(data){
     //   document.getElementById("data_pressure").innerHTML = data.main.pressure + "hPa";
     //   document.getElementById("data_sunset").innerHTML = new Date(data.sys.sunset*1000).toLocaleTimeString();
     // ;
-
 
   }
