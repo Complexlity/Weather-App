@@ -58,7 +58,7 @@ async function loadSite(cityName){
   loader.style.display = 'flex'
   let weatherData = await getRequest(cityName)
   if (weatherData === 400) {
-    alert('City Not Found. Go To Default')
+    alert('NOT FOUND. Go To Default')
     loadSite('LONDON')
     return
   }

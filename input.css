@@ -24,7 +24,7 @@
 }
 
 .content{
-    filter: brightness(80%);
+    filter: brightness(90%);
 }
 
 @media (min-width:700px) {
