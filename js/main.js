@@ -75,7 +75,7 @@ async function loadSite(cityName){
     let iconCode = data.weather[0].icon
     let today = new Date()
     let backgroundImage;
-    let weatherArray = ['rain', 'clouds', 'clear', 'mist']
+    let weatherArray = ['rain', 'clouds', 'clear', 'mist','snow']
     let weatherName = weatherData[1].toLowerCase()
     backgroundImage = `url('../assets/${weatherName}.jpg')`
     if(!(weatherArray.includes(weatherName))) backgroundImage = '#111827'
