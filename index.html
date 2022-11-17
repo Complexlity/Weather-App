@@ -19,7 +19,7 @@
             <button data-searchBtn class="ml-2 bg-blue-400 px-4 rounded-xl h-full py-4 hover:bg-blue-500">Search</button></div>
         <div class=" min-h-screen mt-4">
             <div class="content | relative md:rounded-xl  md:h-[20rem] grid md:grid-cols-2 items-center gap-3 md:grid-rows-1 md:pl-4">
-                <div data-loader class="loader-container | absolute inset-0 flex items-center justify-center text-3xl bg-gray-900 z-10"><div class="loader">Loading
+                <div data-loader class="loader-container | transition-opacity rounded-xl absolute inset-0 flex items-center justify-center text-3xl bg-gray-900 z-10"><div class="loader">Loading
                     <span></span>
                 </div></div>
                 <div class="mini-content md:bg-none pb-4 px-4 md:pb-0 md:px-0 rounded-xl">
@@ -35,7 +35,7 @@
                     <div class="flex justify-between mt-4 md:mt-8">
                         <div class="flex gap-1 md:text-2xl"><img class='w-6' src="./assets/wind-pressure.png" alt=""><span data-windPressure></span></div>
                         <div class="flex gap-1 md:text-2xl"><img class='w-6' src="./assets/humidity.png" alt=""><span data-humidity></span></div>
-                        <div class="flex gap-1 md:text-2xl"><img class='w-6' src="./assets/wind-speed.png" alt=""><span data-windSpeed></span></div>
+                        <div class="flex gap-1 md:text-2xl"><img class='w-6 h-auto' src="./assets/wind-speed.png" alt=""><span data-windSpeed></span></div>
                     </div>
                     <div>
                     </div>
@@ -46,7 +46,7 @@
                     <img data-gif class="w-full rounded-xl h-full border-1 border-black md:max-w-[20rem]" src="./assets/clear.jpg" alt="">
                 </div>
             </div>
-            <div class="grid grid-cols-2 gap-4 h-[20rem] md:h-[22rem] mt-4">
+            <div class="hidden grid grid-cols-2 gap-4 h-[20rem] md:h-[22rem] mt-4">
                 <div class="bg-gray-300 py-2 px-4 rounded-xl">lorem</div>
                 <div class="bg-gray-300 py-2 px-4 rounded-xl">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, quidem.</div>
                 <div class="bg-gray-300 py-2 px-4 rounded-xl">Lorem ipsum dolor sit amet.</div>

@@ -41,8 +41,12 @@
 
 
 /* LOADING SPINNER */
-.loader-container {
+.transition-opacity {
     transition: opacity ease-out 3s;
+}
+
+.transition-none {
+    transition:none !important;
 }
 
 .loader
@@ -79,6 +83,7 @@
   border-radius:50%;
   animation:animateC 2s linear infinite;
 }
+
 .loader span
 {
   display:block;
@@ -103,6 +108,7 @@
   right:-8px;
   box-shadow:0 0 20px #fff000;
 }
+
 @keyframes animateC
 {
   0%
