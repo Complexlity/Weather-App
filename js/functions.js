@@ -16,7 +16,6 @@ async function getGif(searchInput){
   const response = await fetch(request)
     const recievedData = await response.json()
     const imageUrl = recievedData.data.images.original.url
-    console.log(imageUrl)
     return imageUrl
 }
 

@@ -71,6 +71,7 @@ async function loadSite(cityName){
   function updatePage(data){
     let weatherData = data[0]
     let backgroundGif = data[1]
+    gif.src = backgroundGif
     data = weatherData[0]
     let iconCode = data.weather[0].icon
     let today = new Date()
@@ -90,7 +91,6 @@ async function loadSite(cityName){
     windPressure.innerHTML = data.main.pressure + 'hpa'
     humidity.innerHTML = data.main.humidity + '%'
     windSpeed.innerHTML = data.wind.speed + 'mph'
-    gif.src = backgroundGif
     loader.classList.remove('transition-none')
     loader.style.opacity = '0'
     

@@ -9,6 +9,12 @@
     --bg-image: #111827;
 }
 
+div.wallpaper{
+  background-image: url('../assets/bgImage.jpg');
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
 .content * {
     color:black;
 }
