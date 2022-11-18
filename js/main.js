@@ -40,6 +40,7 @@ function submitQuery(){
     let query = searchInput.value
     if(!query) return
       searchInput.value = ''
+      query =   query.replace(/(\s+$|^\s+)/g, '')
       loadSite(query)
     
 }
