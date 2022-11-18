@@ -7,7 +7,6 @@ let c = console.log.bind(document)
 let root = dq(':root')
 
 let searchForm = dq('[data-search]')
-console.log(searchForm)
 let searchButton = dq('[data-searchBtn')
 let searchInput = searchForm.querySelector('input')
 let cityName = dq('[data-cityName]')
