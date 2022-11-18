@@ -18,11 +18,8 @@ let windPressure = dq('[data-windPressure]')
 let windSpeed = dq('[data-windSpeed]')
 let humidity = dq('[data-humidity]')
 let weatherIcon = dq('[data-weatherIcon]')
-let country = dq('[data-country]')
 let gif = dq('[data-gif]')
 let loader = dq('[data-loader]')
-let loading = dq('.loader')
-let redirect
 
 window.onload = function(){
   loadSite('London')
@@ -42,6 +39,7 @@ function submitQuery(){
       searchInput.value = ''
       query =   query.replace(/(\s+$|^\s+)/g, '')
       loadSite(query)
+
     
 }
 
@@ -52,11 +50,8 @@ function submitQuery(){
 
 
 async function loadSite(cityName){
-  
-  
   loader.classList.add('transition-none')
   loader.style.opacity = '1'
-  loader.style.display = 'flex'
   let weatherData = await getRequest(cityName)
   if (weatherData === 400) {
     alert(cityName + ' NOT FOUND. Go To Default')
