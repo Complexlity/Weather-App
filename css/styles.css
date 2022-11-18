@@ -737,6 +737,22 @@ video {
   line-height: 2rem;
 }
 
+.text-\[1\.1em\] {
+  font-size: 1.1em;
+}
+
+.text-\[1\.2em\] {
+  font-size: 1.2em;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-extrabold {
+  font-weight: 800;
+}
+
 .transition-opacity {
   transition-property: opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -746,6 +762,10 @@ video {
 /* .content {
     grid-template-rows:repeat(2, 250px);
 } */
+
+* {
+  font-family: serif;
+}
 
 :root{
   --bg-image: #111827;

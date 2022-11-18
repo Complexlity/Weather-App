@@ -5,6 +5,10 @@
 /* .content {
     grid-template-rows:repeat(2, 250px);
 } */
+* {
+  font-family: serif;
+}
+
 :root{
     --bg-image: #111827;
 }
