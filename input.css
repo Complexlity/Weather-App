@@ -26,11 +26,7 @@ div.wallpaper{
     background: var(--bg-image);
     background-size:cover;
     background-repeat:no-repeat;
-
-}
-
-.content{
-    filter: brightness(90%);
+    opacity: 90%;
 }
 
 @media (min-width:700px) {
@@ -42,7 +38,8 @@ div.wallpaper{
         background: var(--bg-image);
         background-size:100%;
     background-repeat:no-repeat;
-    }
+    opacity: 90%;
+  }
 }
 
 
