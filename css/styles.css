@@ -709,6 +709,16 @@ video {
   padding-bottom: 1rem;
 }
 
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.py-\[\.9rem\] {
+  padding-top: .9rem;
+  padding-bottom: .9rem;
+}
+
 .pb-4 {
   padding-bottom: 1rem;
 }
@@ -737,20 +747,8 @@ video {
   line-height: 2rem;
 }
 
-.text-\[1\.1em\] {
-  font-size: 1.1em;
-}
-
-.text-\[1\.2em\] {
-  font-size: 1.2em;
-}
-
 .font-bold {
   font-weight: 700;
-}
-
-.font-extrabold {
-  font-weight: 800;
 }
 
 .transition-opacity {
@@ -763,8 +761,12 @@ video {
     grid-template-rows:repeat(2, 250px);
 } */
 
-* {
+*{
   font-family: serif;
+}
+
+form *{
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 :root{

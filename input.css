@@ -5,8 +5,13 @@
 /* .content {
     grid-template-rows:repeat(2, 250px);
 } */
-* {
+
+*{
   font-family: serif;
+}
+
+form *{
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 :root{
