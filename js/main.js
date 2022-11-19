@@ -1,4 +1,4 @@
-import {getRequest, getGif} from './functions.js'
+import {getRequest, getGif, getRandomCity} from './functions.js'
 
 let dq = document.querySelector.bind(document)
 let dqa = document.querySelectorAll.bind(document)
@@ -19,9 +19,12 @@ let humidity = dq('[data-humidity]')
 let weatherIcon = dq('[data-weatherIcon]')
 let gif = dq('[data-gif]')
 let loader = dq('[data-loader]')
+// London latitude and longitude
+let lat = '51.5085'
+let lon = '-0.1257'
 
 window.onload = function(){
-  loadSite('London')
+  getDefaultLocation()
 }
 
 
@@ -53,8 +56,8 @@ async function loadSite(cityName){
   loader.style.opacity = '1'
   let weatherData = await getRequest(cityName)
   if (weatherData === 400) {
-    alert(cityName + ' NOT FOUND. Go To Default')
-    loadSite('LONDON')
+    alert(cityName + ' NOT FOUND. Resetting to Default')
+    getDefaultLocation()
     return
   }
     let backgroundGif = await getGif(weatherData[1])
@@ -63,6 +66,24 @@ async function loadSite(cityName){
   }
   
   
+async function getDefaultLocation(){
+  if (navigator.geolocation) { // device can return its location
+    function success(position) {
+        lat = position.coords.latitude;
+         lon = position.coords.longitude;
+         loadSite([lat, lon])
+    }
+
+    function error(err){
+      alert('Location Denied!! Rerouting to random location')
+      let randomCity = getRandomCity()
+      loadSite(randomCity)
+    }
+
+      navigator.geolocation.getCurrentPosition(success, error)
+  }
+}
+
   function updatePage(data){
     let weatherData = data[0]
     let backgroundGif = data[1]
