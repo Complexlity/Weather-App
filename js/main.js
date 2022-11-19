@@ -75,7 +75,7 @@ async function getDefaultLocation(){
     }
 
     function error(err){
-      alert('Location Data Not Shared!! Rerouting to random location')
+      alert('Location data unauthorized!! Rerouting to random location')
       let randomCity = getRandomCity()
       loadSite(randomCity)
     }
