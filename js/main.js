@@ -56,7 +56,7 @@ async function loadSite(cityName){
   loader.style.opacity = '1'
   let weatherData = await getRequest(cityName)
   if (weatherData === 400) {
-    alert(cityName + ' NOT FOUND. Resetting to Default')
+    alert(cityName + ' NOT FOUND. Resetting to default location')
     getDefaultLocation()
     return
   }
