@@ -56,7 +56,7 @@ async function loadSite(cityName){
   loader.style.opacity = '1'
   let weatherData = await getRequest(cityName)
   if (weatherData === 400) {
-    alert(cityName + ' NOT FOUND. Resetting to default location')
+    alert(cityName.toUpperCase() + ' Not Found!. Resetting to your location')
     getDefaultLocation()
     return
   }
@@ -75,7 +75,7 @@ async function getDefaultLocation(){
     }
 
     function error(err){
-      alert('Location Denied!! Rerouting to random location')
+      alert('Location Data Not Shared!! Rerouting to random location')
       let randomCity = getRandomCity()
       loadSite(randomCity)
     }
