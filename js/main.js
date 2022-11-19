@@ -92,10 +92,10 @@ async function getDefaultLocation(){
     let iconCode = data.weather[0].icon
     let today = new Date()
     let backgroundImage;
-    let weatherArray = ['rain', 'clouds', 'clear', 'mist','snow']
+    let weatherArray = ['rain', 'clouds', 'clear', 'mist','snow', 'haze']
     let weatherName = weatherData[1].toLowerCase()
     backgroundImage = `url('../assets/${weatherName}.jpg')`
-    if(!(weatherArray.includes(weatherName))) backgroundImage = '#111827'
+    if(!(weatherArray.includes(weatherName))) backgroundImage = '#e0f2fe'
     root.style.setProperty('--bg-image', backgroundImage)
     if ((data.name).length > 8) {
       cityName.style.fontSize = time.style.fontSize = '.9em'
@@ -106,7 +106,7 @@ async function getDefaultLocation(){
     cityName.innerHTML = data.name;
     time.innerHTML = `Today ${today.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}`
     temperature.innerHTML = Math.round((data.main.temp-273.15)*10)/10 + "°C";
-    weatherIcon.src = "http://openweathermap.org/img/w/" + iconCode + ".png"
+    weatherIcon.src = "https://openweathermap.org/img/w/" + iconCode + ".png"
     weatherIcon.style.display = 'inline-block'
     weather.innerHTML = weatherData[1]
     windPressure.innerHTML = data.main.pressure + 'hpa'
