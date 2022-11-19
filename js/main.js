@@ -97,7 +97,12 @@ async function getDefaultLocation(){
     backgroundImage = `url('../assets/${weatherName}.jpg')`
     if(!(weatherArray.includes(weatherName))) backgroundImage = '#111827'
     root.style.setProperty('--bg-image', backgroundImage)
-    
+    if ((data.name).length > 8) {
+      cityName.style.fontSize = time.style.fontSize = '.9em'
+      }
+    else cityName.style.fontSize = time.style.fontSize =  '1em'
+
+
     cityName.innerHTML = data.name;
     time.innerHTML = `Today ${today.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}`
     temperature.innerHTML = Math.round((data.main.temp-273.15)*10)/10 + "°C";
