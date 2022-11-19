@@ -1,4 +1,4 @@
-import cities from '../assets/cities.json' assert {type: 'json'};
+import countries from '../data/countries.json' assert {type: 'json'};
 
 async function getRequest(locationData){
   let request;
@@ -30,8 +30,8 @@ async function getGif(searchInput){
 }
 
 function getRandomCity(){
-  const randomIndex = Math.floor(Math.random() * cities.length)
-  const item = cities[randomIndex]
+  const randomIndex = Math.floor(Math.random() * countries.length)
+  const item = countries[randomIndex]
   return item.name
 }
 
