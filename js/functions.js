@@ -5,7 +5,7 @@ async function getRequest(locationData){
   if (typeof locationData == 'object'){
     let latitude = locationData[0]
     let longitude = locationData[1]
-    request = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=20f7632ffc2c022654e4093c6947b4f4`
+    request = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=20f7632ffc2c022654e4093c6947b4f4`
   }
   else{
   request = `https://api.openweathermap.org/data/2.5/weather?q=${locationData}&APPID=20f7632ffc2c022654e4093c6947b4f4` 
