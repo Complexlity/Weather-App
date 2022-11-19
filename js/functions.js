@@ -1,4 +1,4 @@
-import cities from '../testing/cities.json' assert {type: 'json'};
+import cities from '../assets/cities.json' assert {type: 'json'};
 
 async function getRequest(locationData){
   let request;
