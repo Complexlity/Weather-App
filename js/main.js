@@ -95,8 +95,13 @@ async function getDefaultLocation(){
     let weatherArray = ['rain', 'clouds', 'clear', 'mist','snow', 'haze']
     let weatherName = weatherData[1].toLowerCase()
     backgroundImage = `url('../assets/${weatherName}.jpg')`
+
     if(!(weatherArray.includes(weatherName))) backgroundImage = '#e0f2fe'
     root.style.setProperty('--bg-image', backgroundImage)
+    
+    if(weatherName === 'rain') root.style.setProperty('--text-clr', 'white')
+    else root.style.setProperty('--text-clr', 'black')
+
     if ((data.name).length > 8) {
       cityName.style.fontSize = time.style.fontSize = '.9em'
       }

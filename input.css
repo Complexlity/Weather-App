@@ -16,6 +16,7 @@ form *{
 
 :root{
     --bg-image: #111827;
+    --text-clr: black;
 }
 
 div.wallpaper{
@@ -25,7 +26,7 @@ div.wallpaper{
 }
 
 .content * {
-    color:black;
+    color:var(--text-clr)
 }
 .search:has(input:focus){
     border-color:rgb(156 163 175 /1)
