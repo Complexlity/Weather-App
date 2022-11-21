@@ -19,6 +19,10 @@ let humidity = dq('[data-humidity]')
 let weatherIcon = dq('[data-weatherIcon]')
 let gif = dq('[data-gif]')
 let loader = dq('[data-loader]')
+let locationIcon = dq('[data-locationIcon]')
+let humidityIcon = dq('[data-humidityIcon]')
+let windSpeedIcon = dq('[data-windSpeedIcon]')
+let windPressureIcon = dq('[data-windPressureIcon]')
 // London latitude and longitude
 let lat = '51.5085'
 let lon = '-0.1257'
@@ -99,8 +103,8 @@ async function getDefaultLocation(){
     if(!(weatherArray.includes(weatherName))) backgroundImage = '#e0f2fe'
     root.style.setProperty('--bg-image', backgroundImage)
     
-    if(weatherName === 'rain') root.style.setProperty('--text-clr', 'white')
-    else root.style.setProperty('--text-clr', 'black')
+    if(weatherName === 'rain') setTheme('light')
+    else setTheme('dark')
 
     if ((data.name).length > 8) {
       cityName.style.fontSize = time.style.fontSize = '.9em'
@@ -120,4 +124,22 @@ async function getDefaultLocation(){
     loader.classList.remove('transition-none')
     loader.style.opacity = '0'
     
+  }
+
+  function setTheme(theme){
+    if(theme == 'light'){
+      locationIcon.src = './assets/location_white.png'
+      humidityIcon.src = './assets/humidity_white.png'
+      windSpeedIcon.src = './assets/wind-speed_white.png'
+      windPressureIcon.src  =  './assets/wind-pressure_white.png'
+      root.style.setProperty('--text-clr', 'white')
+    }
+
+    else if (theme == 'dark'){
+      locationIcon.src = './assets/location.png'
+      humidityIcon.src = './assets/humidity.png'
+      windSpeedIcon.src = './assets/wind-speed.png'
+      windPressureIcon.src  =  './assets/wind-pressure.png'
+      root.style.setProperty('--text-clr', 'black')
+    }
   }
