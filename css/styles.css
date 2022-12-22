@@ -565,6 +565,10 @@ video {
   height: 100%;
 }
 
+.h-4 {
+  height: 1rem;
+}
+
 .h-10 {
   height: 2.5rem;
 }
@@ -593,6 +597,10 @@ video {
   width: 100%;
 }
 
+.w-4 {
+  width: 1rem;
+}
+
 .w-8 {
   width: 2rem;
 }
@@ -603,6 +611,12 @@ video {
 
 .max-w-\[900px\] {
   max-width: 900px;
+}
+
+.scale-\[0\.5\] {
+  --tw-scale-x: 0.5;
+  --tw-scale-y: 0.5;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .grid-cols-2 {
@@ -765,7 +779,7 @@ form *{
 
 :root{
   --bg-image: #111827;
-  --text-clr: black;
+  --text-clr: #d4d1d1a1;
 }
 
 div.wallpaper{
