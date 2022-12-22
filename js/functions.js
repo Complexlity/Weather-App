@@ -2,7 +2,7 @@ import countries from "../data/countries.js";
 
 async function getRequest(locationData) {
   let request;
-  if (typeof locationData == "object") {
+  if (typeof locationData === "object") {
     let latitude = locationData[0];
     let longitude = locationData[1];
     request = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=20f7632ffc2c022654e4093c6947b4f4`;
