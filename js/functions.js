@@ -14,7 +14,6 @@ async function getRequest(locationData) {
     return 400;
   }
   let data = await response.json();
-
   let currentWeather = data.weather[0].main;
   return [data, currentWeather];
 }
