@@ -85,7 +85,7 @@ function updatePage(data) {
   gif.src = backgroundGif;
   data = weatherData[0];
   let iconCode = data.weather[0].icon;
-  let today = new Date(data.dt * 1000 - data.timezone * 1000);
+  let today = new Date();
 
   let backgroundImage;
   let weatherArray = ["rain", "clouds", "clear", "mist", "snow", "haze"];
