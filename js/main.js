@@ -46,8 +46,18 @@ async function loadSite(cityName) {
     alert(cityName.toUpperCase() + " Not Found!. Resetting to your location");
     getDefaultLocation();
     return;
+  } else if (weatherData === 404) {
+    // Todo: Write function if could not connect to the API
+    showError();
+    return;
   }
-  let backgroundGif = await getGif(weatherData[1]);
+  let backgroundGif;
+  try {
+    backgroundGif = await getGif(weatherData[1]);
+  } catch (error) {
+    // Todo: Write function if background gif could not be found
+    backgroundGif = useDefaultGif();
+  }
   let data = [weatherData, backgroundGif];
   updatePage(data);
 }
@@ -55,6 +65,7 @@ async function loadSite(cityName) {
 async function getDefaultLocation() {
   if (navigator.geolocation) {
     // device can return its location
+
     function success(position) {
       lat = position.coords.latitude;
       lon = position.coords.longitude;
@@ -126,4 +137,12 @@ function setTheme(theme) {
     windPressureIcon.src = "./assets/wind-pressure.png";
     root.style.setProperty("--text-clr", "black");
   }
+}
+
+function showError() {
+  console.log("Could not connect to weather API");
+}
+
+function useDefaultGif() {
+  console.log("Could not connect to giphy API");
 }

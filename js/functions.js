@@ -10,7 +10,12 @@ async function getRequest(locationData) {
     request = `https://api.openweathermap.org/data/2.5/weather?q=${locationData}&APPID=20f7632ffc2c022654e4093c6947b4f4`;
   }
 
-  let response = await fetch(request);
+  let response;
+  try {
+    response = await fetch(request);
+  } catch (error) {
+    return 404;
+  }
   if (!response.ok) {
     return 400;
   }
