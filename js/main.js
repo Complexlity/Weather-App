@@ -4,7 +4,6 @@ let dq = document.querySelector.bind(document);
 let root = dq(":root");
 
 let searchForm = dq("[data-search]");
-let searchButton = dq("[data-searchBtn");
 let searchInput = searchForm.querySelector("input");
 let cityName = dq("[data-cityName]");
 let time = dq("[data-time]");
@@ -30,8 +29,6 @@ searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
   submitQuery();
 });
-
-searchButton.addEventListener("click", submitQuery);
 
 function submitQuery() {
   let query = searchInput.value;

@@ -14,10 +14,8 @@
       <div
         class="border-x-1 border-gray-300 py-5 px-4 min-h-screen max-w-[900px] mx-auto"
       >
-        <div class="query flex items-center">
-          <form
-            action=""
-            data-search
+        <form data-search class="query flex items-center">
+          <div
             class="search | flex items-center w-full gap-1 rounded-xl border-2 border-gray-300 bg-gray-100 px-2 py-1 mx-auto"
           >
             <img src="./assets/search.svg" alt="search icon" />
@@ -28,15 +26,14 @@
               id=""
               class="bg-gray-100 text-xl w-full focus:outline-none focus:border-none md:py-2"
             />
-          </form>
+          </div>
 
           <button
-            data-searchBtn
             class="ml-2 bg-blue-400 px-4 rounded-xl h-full py-[.35rem] md:py-[.9rem] hover:bg-blue-500 text-xl"
           >
             Search
           </button>
-        </div>
+        </form>
         <div class="min-h-screen mt-4">
           <div
             class="content | relative md:rounded-xl md:h-[20rem] grid md:grid-cols-2 items-center gap-3 md:grid-rows-1 md:pl-4"
