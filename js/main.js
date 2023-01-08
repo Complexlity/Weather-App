@@ -1,9 +1,6 @@
 import { getRequest, getGif, getRandomCity } from "./functions.js";
 
 let dq = document.querySelector.bind(document);
-let dqa = document.querySelectorAll.bind(document);
-let c = console.log.bind(document);
-
 let root = dq(":root");
 
 let searchForm = dq("[data-search]");
@@ -23,9 +20,7 @@ let locationIcon = dq("[data-locationIcon]");
 let humidityIcon = dq("[data-humidityIcon]");
 let windSpeedIcon = dq("[data-windSpeedIcon]");
 let windPressureIcon = dq("[data-windPressureIcon]");
-// London latitude and longitude
-let lat = "51.5085";
-let lon = "-0.1257";
+let lat, lon;
 
 window.onload = function () {
   getDefaultLocation();
@@ -69,7 +64,7 @@ async function getDefaultLocation() {
       loadSite([lat, lon]);
     }
 
-    function error(err) {
+    function error() {
       alert("Location data unauthorized!! Rerouting to random location");
       let randomCity = getRandomCity();
       loadSite(randomCity);
