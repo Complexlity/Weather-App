@@ -1,8 +1,11 @@
 import { getRequest, getGif, getRandomCity } from "./functions.js";
+// Gets the required functions
 
+// Shortens the selector code so we could now use this throughout the file
 let dq = document.querySelector.bind(document);
-let root = dq(":root");
 
+// Gets all the neccessary dom element for manipulation
+let root = dq(":root");
 let searchForm = dq("[data-search]");
 let searchInput = searchForm.querySelector("input");
 let cityName = dq("[data-cityName]");
@@ -21,15 +24,18 @@ let windSpeedIcon = dq("[data-windSpeedIcon]");
 let windPressureIcon = dq("[data-windPressureIcon]");
 let lat, lon;
 
+// Runs on default when the application initiall starts
 window.onload = function () {
   getDefaultLocation();
 };
 
+// Triggers when the query is entered in the form and submitted
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
   submitQuery();
 });
 
+// Gets the input value, removes white spaces and
 function submitQuery() {
   let query = searchInput.value;
   if (!query) return;
@@ -38,27 +44,31 @@ function submitQuery() {
   loadSite(query);
 }
 
-async function loadSite(cityName) {
+async function loadSite(location) {
   loader.classList.add("transition-none");
   loader.style.opacity = "1";
-  let weatherData = await getRequest(cityName);
+  // Runs the fetch request and returns either error or success
+  let weatherData = await getRequest(location);
+
+  // runs if the server returns error
   if (weatherData === 400) {
-    alert(cityName.toUpperCase() + " Not Found!. Resetting to your location");
+    alert(location.toUpperCase() + " Not Found!. Resetting to your location");
     getDefaultLocation();
     return;
-  } else if (weatherData === 404) {
-    // Todo: Write function if could not connect to the API
+  }
+  // runs if the query was unable to get to the server
+  else if (weatherData === 404) {
     showError();
     return;
   }
-  let backgroundGif;
-  try {
-    backgroundGif = await getGif(weatherData[1]);
-  } catch (error) {
-    // Todo: Write function if background gif could not be found
-    backgroundGif = useDefaultGif();
-  }
+  let backgroundGif = await getGif(weatherData[1]);
+
+  // runs if giphy api request fails
+  if (backgroundGif == 404) backgroundGif = useDefaultGif(); // Runs if the giphy api returs error
+
   let data = [weatherData, backgroundGif];
+
+  // Updates the dom with the data gotten from the APIs
   updatePage(data);
 }
 
@@ -123,6 +133,7 @@ function updatePage(data) {
   loader.style.opacity = "0";
 }
 
+// Changes theme in rainy weather. Due to rainy gif being to bright
 function setTheme(theme) {
   if (theme == "light") {
     locationIcon.src = "./assets/location_white.png";
@@ -139,10 +150,12 @@ function setTheme(theme) {
   }
 }
 
+// Todo: Write function if could not connect to the API
 function showError() {
   console.log("Could not connect to weather API");
 }
 
+// Todo: Write function to provide default gif if giphy api response not successful
 function useDefaultGif() {
   console.log("Could not connect to giphy API");
 }
