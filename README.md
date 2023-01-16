@@ -15,6 +15,16 @@ Application to get currrent weather data for any country.
 - Get weather report for any location
 - Get gif corresponding to the current weather
 
+## New Feature Alert!!
+
+For better description of the code clone the `with-comments` branch
+
+### FAQs
+
+Question: Why not merge it to the `main` branch
+
+Answer: I personally believe in writing clean codes and try as much as possible to make it self explanatory. But for the sake of reaching beginner levels I have made this new branch
+
 ## Technologies used
 
 - JavaScript
